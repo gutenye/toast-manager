@@ -36,9 +36,8 @@
 
 				if (!this.$.toast.visible) {
 					this.$.toast.text = this.toasts.shift();
-					this.async(function() {
-						this.$.toast.show();
-					}, 100);
+          pd(1, this.$.toast.text)
+          this.$.toast.show();
 				}
 
 				this.async(this.showNext, 500);
