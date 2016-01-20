@@ -6,7 +6,7 @@
 <dom-module id='toast-manager'>
 	
 	<template>
-		<paper-toast id='toast' duration='{{toastDuration}}'></paper-toast>
+		<paper-toast id='toast' duration='{{duration}}'></paper-toast>
 	</template>
 
 	<script>
@@ -20,9 +20,9 @@
 					value: [],
 					readonly: true,
 				},
-				toastDuration: {
+				duration: {
 					type: Number,
-					value: 1500
+					value: 3000
 				}
 			},
 
@@ -36,7 +36,6 @@
 
 				if (!this.$.toast.visible) {
 					this.$.toast.text = this.toasts.shift();
-          pd(1, this.$.toast.text)
           this.$.toast.show();
 				}
 
